@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
+		<!--<script type="text/javascript" src="jquery.timeago.js" ></script>-->
+		<script type="text/javascript" src="yajqtwitter.js" ></script>
+
+		<style>
+			#twitterFeed {
+				display:block;
+				background-color: #D6D6D6;
+				border-radius: 5px;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				padding: 20px 1;
+			}
+			.posts {
+				display:block;
+				background: white;
+				border-radius: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+			}
+			.post {
+				display:block;
+				border-bottom: 1px dotted #ddd;
+				padding: 8px 6px;
+			}
+
+			.post p {
+				display: inline;
+			}
+
+			.post:last-child {
+				border-bottom-width: 0
+			}
+
+			.post a {
+				color: #B3B3B3;
+				text-decoration: none;
+			}
+
+			.post a:hover {
+				text-decoration: underline;
+			}
+
+			.postDate {
+				font-size: 66%;
+			}
+
+			.postDate a {
+				color: #B3B3B3;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#twitterFeed').yajqtwitter();
+			});
+			
+		</script>
+	</head>
+	<body>
+		<div id="twitterFeed"></div>
+	</body>
+</html>
