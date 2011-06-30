@@ -76,12 +76,16 @@ If TimeAgo is not available, then it fallsback to default simple date format.
 ## Author
 
 Andrew Roberts
-Twitter: @andyroberts_uk
+
+Twitter: [@andyroberts_uk](http://twitter.com/andyroberts_uk)
+
 Web: http://www.andy-roberts.net
+
 Github: https://github.com/andyroberts
 
 ## License
 
 (c) 2011 Andrew Roberts
+
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php). 
 
