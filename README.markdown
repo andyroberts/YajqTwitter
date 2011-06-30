@@ -10,7 +10,7 @@ get even more flexibility. And with CSS it's possible customize the appearance t
 
 ## Usage
 
-1. Link to required Javascript files. Naturally, as it's a jQuery plugin, you'll need to link to jQuery too.
+1\. Link to required Javascript files. Naturally, as it's a jQuery plugin, you'll need to link to jQuery too.
 
 ```html
 ...
@@ -19,7 +19,7 @@ get even more flexibility. And with CSS it's possible customize the appearance t
 ...
 ```
 
-2. Insert the following Javascript: 
+2\. Insert the following Javascript: 
 
 ```html
   <script type="text/javascript">
@@ -29,7 +29,7 @@ get even more flexibility. And with CSS it's possible customize the appearance t
   </script>
 ```
 
-3. Ensure the selector exists. In this instance you need to place the following HTML into the document body:
+3\. Ensure the selector exists. In this instance you need to place the following HTML into the document body:
 
 ```html
   <div id="twitterFeed"></div>
