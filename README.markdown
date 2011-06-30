@@ -14,8 +14,8 @@ get even more flexibility. And with CSS it's possible customize the appearance t
 
 ```html
 ...
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
-<script type="text/javascript" src="yajqtwitter.js" ></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="yajqtwitter.js"></script>
 ...
 ```
 
@@ -39,7 +39,9 @@ YajqTwitter will populate this div will the items from your specified Twitter fe
 
 By default it will retrieve five tweets from the specified feed. To change this value, set the 'maxNumberOfPosts' option too, e.g.:
 
+```html
   $('#twitterFeed').yajqtwitter({username: 'your_twitter_username', maxNumberOfPosts: 10});
+```
 
 See twitter_test.html for sample use and styling.
 
@@ -53,9 +55,9 @@ Make sure to include the TimeAgo plugin before YajqTwitter, as follows:
 
 ```html
   ...
-  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
-  <script type="text/javascript" src="jquery.timeago.js" ></script>
-  <script type="text/javascript" src="yajqtwitter.js" ></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.timeago.js"></script>
+  <script type="text/javascript" src="yajqtwitter.js"></script>
   ...
 ```
 
