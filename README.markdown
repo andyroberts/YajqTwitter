@@ -45,35 +45,11 @@ By default it will retrieve five tweets from the specified feed. To change this 
 
 See twitter_test.html for sample use and styling.
 
-## Fuzzy timestamps
-
-By default the time/date for tweets are formatted using Javascript's Date.toDateString(), e.g., "Tue Jun 28 2011".
-To get a slightly more "social" version, e.g., "two days ago", the only extra step is to 
-include the TimeAgo jQuery plugin. See http://timeago.yarp.com for downloads and more information.
-
-Make sure to include the TimeAgo plugin before YajqTwitter, as follows:
-
-```html
-  ...
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-  <script type="text/javascript" src="jquery.timeago.js"></script>
-  <script type="text/javascript" src="yajqtwitter.js"></script>
-  ...
-```
-
-YajqTwitter checks to see if TimeAgo is loaded and if so, use it's functionality to produce
-the fuzzy time formats. There's no need to do any additional jQuery magic.
-
-If TimeAgo is not available, then it fallsback to default simple date format.
-
 ## Roadmap
 
-1. Drop suppport for TimeAgo and include an inline function based on John 
-   Resig's Pretty Date code (http://ejohn.org/blog/javascript-pretty-date/).
+1. Convert @names, #hashtags and hyperlinks in tweets into links in their own right.
 
-2. Convert @names, #hashtags and hyperlinks in tweets into links in their own right.
-
-3. Use setInterval to check with Twitter for new tweets.
+2. Use setInterval to check with Twitter for new tweets.
 
 ## Author
 
