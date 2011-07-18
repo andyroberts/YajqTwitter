@@ -66,8 +66,11 @@
 								}
 
 								var timestamp = post["created_at"];
-								var tzRegex = /(\+[0-9]{4}\s)/ig;
-								timestamp = timestamp.replace(tzRegex,"");
+								if (isNaN(Date.parse(twitterDate))) {
+									// must be IE, let's do something
+									var tzRegex = /(\+[0-9]{4}\s)/ig;
+									timestamp = timestamp.replace(tzRegex,"");
+								}
 								var postDate = new Date(timestamp);
 								var dateHtml = "";
 								dateHtml = "<span class=\"timeago\">"+prettyDate(iso8601(postDate))+"</span>";
