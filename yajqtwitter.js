@@ -66,7 +66,7 @@
 								}
 
 								var timestamp = post["created_at"];
-								if (isNaN(Date.parse(twitterDate))) {
+								if (isNaN(Date.parse(timestamp))) {
 									// must be IE, let's do something
 									var tzRegex = /(\+[0-9]{4}\s)/ig;
 									timestamp = timestamp.replace(tzRegex,"");
