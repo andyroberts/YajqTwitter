@@ -3,11 +3,28 @@
 	$.fn.yajqtwitter = function(options) { 
 
 		options = $.extend({}, $.fn.yajqtwitter.defaults, options);
+		
+		var linkify = function(text) {
+			var exp = /\b(http:\/\/[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|])/ig;
+			return text.replace(exp,"<a href='$1'>$1</a>");
+		}
 
+		var linkifyTwitter = function(text) {
+			var screennameRe = /(@([A-Za-z0-9_]+))/ig;
+			var hashtagRe = /(#([-A-Za-z0-9_]))/ig;
+			
+			text = text.replace(screennameRe,"<a href=\"http://www.twitter.com/$2\">$1</a>");
+			text = text.replace(hashtagRe,"<a href=\"https://twitter.com/#!/search?q=%23$2\">$1</a>");
+			return text;
+		}
+		
 		var parseFunctions = {
 			'regular': function parseRegular(post) {
 				var bodyString = post['text'];
-			
+				if (options.linkify) {
+					bodyString = linkify(bodyString);
+					bodyString = linkifyTwitter(bodyString);
+				}
 				return "<div class=\"post-body\">" + bodyString + "</div>";
 			}
 		};
@@ -26,7 +43,9 @@
 		    + ":" + zeropad(date.getUTCMinutes())
 		    + ":" + zeropad(date.getUTCSeconds()) + "Z";
 		};
+	
 		
+
 	       /* Credit: John Resig (http://ejohn.org/blog/javascript-pretty-date/); Updated by AR */ 
 		var prettyDate = function(time) {
 			var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," ")),
@@ -52,8 +71,8 @@
 				$.ajax({
 					type:'GET',
 					dataType: "jsonp",
-					data: "screen_name="+options.username+"&count="+options.maxNumberOfPosts,
-					url:"http://api.twitter.com/1/statuses/user_timeline.json",
+					data: "trim_user=1&screen_name="+options.username+"&count="+(options.maxNumberOfPosts+1),
+					url:"https://api.twitter.com/1/statuses/user_timeline.json",
 					success: function(posts_api_read) {
 			
 						if (posts_api_read == null) {
@@ -62,7 +81,7 @@
 							$this.empty();
 							var postsBuffer = "";
 							$.each(posts_api_read, function(i, post){
-								if (i >= options.maxNumberOfPosts) {
+								if (i > options.maxNumberOfPosts) {
 									return false;
 								}
 
@@ -87,6 +106,7 @@
 	}
 
 	$.fn.yajqtwitter.defaults = {
+		linkify: true,
         	maxNumberOfPosts: 5,
 		username: 'andyroberts_uk'
 	}; 
