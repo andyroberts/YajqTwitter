@@ -1,7 +1,5 @@
 # YajqTwitter - Yet another jQuery Twitter plugin
 
-(Last updated 30th June 2011)
-
 ## Description
 
 YajqTwitter is a jQuery plugin for retrieving tweets via the official Twitter API.
@@ -45,11 +43,14 @@ By default it will retrieve five tweets from the specified feed. To change this 
 
 See twitter_test.html for sample use and styling.
 
+## Options
+
+* linkify: true (converts URLs, twitter screen names and hashtags into hyperlinks)
+* maxNumberOfPosts: 5 (specifies upper limit of posts to display)
+
 ## Roadmap
 
-1. Convert @names, #hashtags and hyperlinks in tweets into links in their own right.
-
-2. Use setInterval to check with Twitter for new tweets.
+1. Use setInterval to check with Twitter for new tweets.
 
 ## Author
 
