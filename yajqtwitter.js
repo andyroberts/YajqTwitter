@@ -6,15 +6,15 @@
 		
 		var linkify = function(text) {
 			var exp = /\b(http:\/\/[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|])/ig;
-			return text.replace(exp,"<a href='$1'>$1</a>");
+			return text.replace(exp,"<a href='$1' target=\"_blank\">$1</a>");
 		}
 
 		var linkifyTwitter = function(text) {
 			var screennameRe = /(@([A-Za-z0-9_]+))/ig;
 			var hashtagRe = /(#([-A-Za-z0-9_]))/ig;
 			
-			text = text.replace(screennameRe,"<a href=\"http://www.twitter.com/$2\">$1</a>");
-			text = text.replace(hashtagRe,"<a href=\"https://twitter.com/#!/search?q=%23$2\">$1</a>");
+			text = text.replace(screennameRe,"<a href=\"http://www.twitter.com/$2\" target=\"_blank\">$1</a>");
+			text = text.replace(hashtagRe,"<a href=\"https://twitter.com/#!/search?q=%23$2\" target=\"_blank\">$1</a>");
 			return text;
 		}
 		
