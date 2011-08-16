@@ -78,7 +78,7 @@
 						if (posts_api_read == null) {
 							// TODO: produce some suitable error message
 						} else {
-							$this.empty();
+							//$this.empty();
 							var postsBuffer = "";
 							$.each(posts_api_read, function(i, post){
 								if (i > options.maxNumberOfPosts) {
