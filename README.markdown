@@ -47,6 +47,7 @@ See twitter_test.html for sample use and styling.
 
 * linkify: true (converts URLs, twitter screen names and hashtags into hyperlinks)
 * maxNumberOfPosts: 5 (specifies upper limit of posts to display)
+* includeRetweets: true (choose whether the timeline includes retweets)
 
 ## Roadmap
 
@@ -64,7 +65,7 @@ Github: https://github.com/andyroberts
 
 ## License
 
-(c) 2011 Andrew Roberts
+(c) 2012 Andrew Roberts
 
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php). 
 

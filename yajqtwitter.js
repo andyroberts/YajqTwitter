@@ -71,7 +71,7 @@
 				$.ajax({
 					type:'GET',
 					dataType: "jsonp",
-					data: "trim_user=1&screen_name="+options.username+"&count="+(options.maxNumberOfPosts+1),
+					data: "trim_user=1&screen_name="+options.username+"&count="+(options.maxNumberOfPosts+1) + (options.includeRetweets ? "&include_rts=1":""),
 					url:"https://api.twitter.com/1/statuses/user_timeline.json",
 					success: function(posts_api_read) {
 			
@@ -108,7 +108,8 @@
 	$.fn.yajqtwitter.defaults = {
 		linkify: true,
         	maxNumberOfPosts: 5,
-		username: 'andyroberts_uk'
+		username: 'andyroberts_uk',
+		includeRetweets: true
 	}; 
 
 })(jQuery);
